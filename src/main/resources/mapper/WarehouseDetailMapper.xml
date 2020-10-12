@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sdjzu.graduation.project.mapper.WarehouseDetailMapper">
+  <resultMap id="BaseResultMap" type="com.sdjzu.graduation.project.domain.WarehouseDetail">
+    <!--@mbg.generated generated on Wed May 06 20:19:35 CST 2020.-->
+    <!--@Table warehouse_detail-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="date" jdbcType="DATE" property="date" />
+    <result column="no" jdbcType="VARCHAR" property="no" />
+    <result column="volume" jdbcType="DOUBLE" property="volume" />
+    <result column="action" jdbcType="INTEGER" property="action" />
+    <result column="left_capacity" jdbcType="DOUBLE" property="leftCapacity" />
+    <result column="warehouse_id" jdbcType="BIGINT" property="warehouseId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Wed May 06 20:19:35 CST 2020.-->
+    id, `date`, `no`, volume, `action`, left_capacity, warehouse_id
+  </sql>
+
+  <select id="search" resultMap="BaseResultMap">
+    SELECT warehouse_detail.* FROM warehouse_detail
+    LEFT JOIN project_detail AS p ON p.`id` = warehouse_detail.`project_detail_id`
+    LEFT JOIN components AS c ON c.id = p.`component_id`
+    WHERE warehouse_detail.`warehouse_id` = #{warehouseId}
+    AND CONCAT(warehouse_detail.`date`,warehouse_detail.`left_capacity`,p.`component_number`,c.`no`,c.`name`,c.`volume`)
+    LIKE #{searchValue};
+  </select>
+</mapper>

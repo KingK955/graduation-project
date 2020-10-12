@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sdjzu.graduation.project.mapper.PlatTokenMapper">
+  <resultMap id="BaseResultMap" type="com.sdjzu.graduation.project.domain.PlatToken">
+    <!--@mbg.generated generated on Sat May 02 16:07:42 CST 2020.-->
+    <!--@Table plat_token-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="token" jdbcType="VARCHAR" property="token" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Sat May 02 16:07:42 CST 2020.-->
+    id, user_id, token
+  </sql>
+</mapper>

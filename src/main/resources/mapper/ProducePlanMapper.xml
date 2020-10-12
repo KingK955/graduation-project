@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sdjzu.graduation.project.mapper.ProducePlanMapper">
+  <resultMap id="BaseResultMap" type="com.sdjzu.graduation.project.domain.ProducePlan">
+    <!--@mbg.generated generated on Sun May 03 23:11:23 CST 2020.-->
+    <!--@Table produce_plan-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="produce_no" jdbcType="VARCHAR" property="produceNo" />
+    <result column="produce_time" jdbcType="DATE" property="produceTime" />
+    <result column="component_id" jdbcType="BIGINT" property="componentId" />
+    <result column="component_number" jdbcType="BIGINT" property="componentNumber" />
+    <result column="status" jdbcType="BIGINT" property="status" />
+    <result column="warehouse_id" jdbcType="BIGINT" property="warehouseId" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Sun May 03 23:11:23 CST 2020.-->
+    id, produce_no, produce_time, component_id, component_number, `status`, warehouse_id, 
+    user_id
+  </sql>
+</mapper>
